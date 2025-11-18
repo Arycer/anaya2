@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        rigidbody.linearVelocity = new Vector2(moveDirection * maxSpeed, rigidbody.linearVelocity.y);
+        
         if (moveDirection > 0.0f && !facingRight)
         {
             Flip();
