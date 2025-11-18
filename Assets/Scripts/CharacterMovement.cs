@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-
     public float maxSpeed = 6.0f;
     public float moveDirection;
     public bool facingRight;
@@ -12,17 +11,14 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         moveDirection = Input.GetAxis("Horizontal");
-        
     }
 
-    void FixedUpdate()
     void Flip()
     {
         rigidbody.linearVelocity = new Vector2(moveDirection * maxSpeed, rigidbody.linearVelocity.y);
